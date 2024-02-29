@@ -1,5 +1,9 @@
 function init(self)
-	local fill = gui.get_node("fill")
+	local fill_node = gui.get_node("fill")
+	local fill_bar_max = 480
+	local duration = 6.0
+	local delay = 0.5
+	local animation_done_callback = nil
 
-	gui.animate(fill, "size.x", 480, gui.EASING_INOUTSINE, 6.0, 0.5, nil, gui.PLAYBACK_LOOP_PINGPONG)
+	gui.animate(fill_node, "size.x", fill_bar_max, gui.EASING_INOUTSINE, duration, delay, animation_done_callback, gui.PLAYBACK_LOOP_PINGPONG)
 end
